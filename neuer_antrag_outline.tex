@@ -1,0 +1,173 @@
+\documentclass[12pt,a4paper]{article}
+\linespread{1.3}
+%\usepackage[utf8]{inputenc}
+\usepackage{a4wide}
+\usepackage[official]{eurosym}
+
+\usepackage{a4wide}
+\usepackage[official]{eurosym}
+\usepackage{latexsym}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{natbib}
+\usepackage{verbatim}
+\usepackage{graphicx}
+\usepackage[title,titletoc]{appendix}
+
+\usepackage{lscape}
+%%----------------------------------------------------------------%%
+\usepackage{tikz}
+
+\usepackage{latexsym}
+\usepackage{bbm}
+\usepackage{verbatim}
+\usepackage{graphicx}
+\usepackage[title,titletoc]{appendix}
+\usepackage[all]{xy}
+\usepackage{caption}
+\usepackage[scriptsize]{subfigure}
+\usepackage{tabularx}
+\usepackage{comment}
+\usepackage{color}
+\usepackage{verbatim}
+\usepackage{multirow} %package needed for multirow placement in tables
+\usepackage{subfigure}%option [scriptsize], for multiple figures within a figure environment
+\usepackage{booktabs, threeparttable} %package for table environment spacing. using commands \toprule \midrule \bottomrule \cmidrule{c}{1-2}
+%\usepackage[multiple]{footmisc}%for multiple footnotes at one point
+\usepackage{mathtools}
+%\usepackage[input-decimal-markers=.]{siunitx}
+
+\definecolor{justblue}{RGB}{00,73,127}
+\definecolor{geblue}{RGB}{0,100,150}
+\usepackage{hyperref} % changes all (tex)refs to hyperrefs!
+\hypersetup{breaklinks=true,
+	 colorlinks=true,  %set =true for colored text instead; false for borders
+   %citebordercolor=green,
+	 citecolor=magenta,
+%	 linkcolor=justblue,
+	urlcolor=magenta}
+\urlstyle{rm} %so it doesn't use a typewriter font for url's.
+
+\begin{document}
+
+
+\section{Project 1 - Human Forecasting}
+\label{sec:1}
+
+\subsection{Overview}
+
+\emph{Focus:} Human forecasting in business environments and human forecasts as inputs to algorithmic forecasts.     
+      
+\textbf{Steps:}    
+\begin{enumerate}
+	
+	\item Empirical analysis of pre-Covid LEDs data in the light of the BIN model as described in \cite{satopaa2021bias}. How much noise, how much bias? Difference between forecasters?
+				
+	\item Description of the findings by a model. Two parts: how to model noise, how to model bias.     
+		Albeit, in accordance with citep{bloom2022rationalizing}, I expect noise to be the bigger source of inaccuracy, we have so far thought less about noise (rational inattention?) than about bias (upwards bias due to incentive structure or behavioural pull-to-center bias as in experimental adaption of the Newsvendor problem \citep{ockenfels2014impulse}).
+
+	\item Run experiments (lab/field/hybrid with LedCom forecasters) to find out how forecaster performance can be improved. Apply the interventions in \cite{bloom2022rationalizing} in our situation, namely: financial incentives for accuracy, providing past data and forecasting training.)
+		
+	\item Additional treatment, based on \cite{ibrahim2021eliciting}: asking for private information adjustment instead of direct forecast (when human forecast is used as input for a forecasting algorithm). This should be especially promising for noise reduction. See right below.
+		
+\end{enumerate}
+
+\subsection{Details on PIA}
+
+Assume a data-generating process: \[ Y = v + \sum_{i \in P \cup I} w_i X_i + \epsilon_i \]
+
+$v$ ... intercept (baseline surgery duration)
+
+$X_i$ ... explanatory vars (some private, some public)
+
+$w_i$ ... linear weights ($\hat{=}$ regression coefficients)
+
+$\epsilon$ ... random error (not explicable by $X_i$)
+
+$I$ ... index set of private variables
+
+$P$ ...  index set of public variables (i.e. known also to algorithm)     
+
+
+We want to model this data-generating process and forecast it, so we need to find a way to access the private information $X_{i \in I}$ (private) via \emph{human inputs}:
+	
+\[M = \beta_0 + \beta_1 X_1 + ... + \beta_n X_n + \beta_{n+1} humanforecast\]
+
+This gets better the more useful information is carried by the human forecast, i.e. the more correlated human forecast is with residuals of first n+1 terms
+
+Human Forecasts can be a direct forecast (DF) or a private information adjustment (PIA) with:
+
+\[DF = v + \sum_{i \in P \cup I} w_i X_i\]
+\[PIA = \sum_{i \in I} w_i X_i\]
+
+DF is a competing generic human forecast using all variables. To get PIA, forecasters are asked: consider an algorithm that has information $X_1$ to $X_n$. By how much would you correct this algorithm's forecast based on your additional information?
+
+Consequently, (algorithmic) model predictions using these as inputs:
+
+\[M_{DF} = \alpha_0 + \sum_{i \in P} \alpha_i X_i + \beta_{DF} DF\]
+
+\[M_{PIA} = \gamma_0 + \sum_{i \in P} \gamma_i X_i + \beta_{PIA} PIA\]
+
+Assuming consistent human forecasters (i.e. they apply a perfect linear model in their head like we all do in our daily life and do not make any errors), these two predictions are equal. However, the noisier human predictions are, the greater is the advantage of $M_{PIA}$.    
+
+\textbf{Hypotheses:} 
+
+$H_1$: \emph{All else being equal, a prediction model that
+is calibrated using DF yields less accurate predictions than a
+prediction model that is calibrated using PIA.} (if humans make random errors)
+
+
+\[ \frac{1}{n}\sum_{n} rmse(M_{PIA, n}) < \frac{1}{n}\sum_{n} rmse(M_{DF_n})\]
+
+
+rmse ... root mean square error
+
+Secondary Hypotheses: 
+
+\begin{itemize}
+
+	\item $H_{2a}$: \emph{Inducing greater random error incorporating public information increases the DF-PIA gap.}
+	\item $H_{2b}$: \emph{Inducing greater random error incorporating private information decreases the DF-PIA gap.}
+	\item $H_{2c}$: \emph{Random error incorporating public information increases the DF-PIA gap more than random error incorporating private information.}
+
+\end{itemize}
+
+
+
+
+\section{Project 2 - Algorithmic Dynamic Pricing}
+\label{sec:2}
+
+\subsection{Overview}
+	\emph{Focus:} Algorithmic pricing recommendations and human responses, strategic behaviour and corresponding biases. Relevant for sticky prices/menu costs/inflation.
+
+use hotel data, test cheap talk model
+
+\subsection{Details from ÖAW application}
+
+\emph{Aim of Project 2.} In this project, I investigate the behavioral interaction between a human decision maker and an algorithm in a strategic situation to quantify how possibly misaligned incentives can change both the algorithmic predictions and recommendations and the final decision by the human decision maker. I will thus contribute empirically to the literature on human-algorithm interaction as captured by signalling games in game theory \citep{backus2019empirical}. In the setting I consider, incentives between the algorithm (agent), which provides price recommendations and a human decision maker (principal), who holds the final decision right to set prices for the good, do not have to be fully aligned.
+
+\emph{Available data.} I have access to a large dataset used in \citet{GTW2021demandest}, originating from a revenue management platform which offers algorithmic dynamic price recommendations to hotel managers on the hotel room level that the individual managers (the clients) need to accept, adapt, or ignore manually. The panel consists of over 5 million observations, 130K price changes by hotel managers and more than 800K price recommendation updates.
+
+\emph{Work steps.}
+\begin{enumerate}
+	\item \emph{Exploration of Recommendation-Decision Translation.} I will start with a descriptive analysis of the universe of algorithmic recommendations and pricing decisions both pooled over hotels and separately for each hotel, that is, for each (independent) human decision maker to uncover potential heterogeneity in response behavior.
+Most importantly, I focus in the analysis of how algorithmic recommendations (advice) map into real prices set by human decision makers. My analysis thus addresses the pass-through of recommendations to pricing decisions, i.e.~ how final prices change in response to a change in the recommendations, both in size, level, rates and over time.
+
+\item \emph{Signalling Model.} Based on the analysis of the pattern of recommendations and how human decision makers respond to these recommendations in the previous step, I will assess whether these patterns are consistent with patterns generated by existing cheap-talk or signalling models \citep[see][]{crawford1982strategic, sobel2013givingadvice, backus2019empirical}. A key component in this endeavour is to identify from the pass-through (price-response) data whether the recommendation system has strategic incentives to change behavior of the human decision maker. Even if algorithm and human agree on the objective to maximize revenue for the hotel, there might exist strategic reasons for the algorithm recommendation to deviate from truthful price recommendations. Suppose the human systematically adjusted prices by less than what the algorithm recommends. The algorithm could response to this and `nudge' the decision maker by exaggerating the recommendation, such that the revenue maximation objective can be reached. This concept is what \citet{cowgill2020algorithmic} call `algorithmic social engineering'. Weather apps, for instance, are well known to do exactly that: often, precipitation probability is systematically exaggerated to compensate for the users' wrong judgement of these probabilities, a phenomenon referred to as `wet bias' \citep{wetbias1}, albeit this was, to my knowledge, never analyzed from a game theoretical perceptive.
+
+\item \emph{Experimental Study.} Based on the insight from the empirical analysis of the strategic interaction, I will design a laboratory experiment to follow up important assumptions and key mechanism of how recommendations are exaggerated and mapped into decisions which cannot be addressed by analysis of observational data. This will provide full `control' over the informational and institutional details and hence is a perfect method to investigate some of the key assumptions behind the communication game played by the algorithms and the human decision maker \citep[for an overview of human vs computer players in controlled economic experiments, see][]{march2019behavioral}.
+%
+Specifically, I want to investigate whether human receivers of algorithmic recommendations understand that the algorithm has an incentive to change its recommendation in order to `nudge' the human decision maker to make pricing decisions that lead to better outcomes. Additionally, I will find out how the human response to the recommendation changes depending on whether the algorithm is non-strategic, i.e.~only gives truthful recommendations or strategic, i.e.~distorts its recommendations according to the past human responses.
+
+\end{enumerate}
+
+
+
+\pagebreak
+\renewcommand\refname{Bibliography}
+\bibliography{bibliography}
+\bibliographystyle{aer}
+
+\end{document}
