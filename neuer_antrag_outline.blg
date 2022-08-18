@@ -8,45 +8,45 @@ Reallocating 'singl_function' (item size: 4) to 100 items.
 Reallocating 'singl_function' (item size: 4) to 100 items.
 Database file #1: bibliography.bib
 Warning--there's a number but no series in march2019behavioral
-You've used 11 entries,
+You've used 12 entries,
             2984 wiz_defined-function locations,
-            722 strings with 6095 characters,
-and the built_in function-call counts, 9766 in all, are:
-= -- 1502
-> -- 560
-< -- 154
-+ -- 180
-- -- 101
-* -- 619
-:= -- 2173
-add.period$ -- 12
-call.type$ -- 11
-change.case$ -- 77
-chr.to.int$ -- 11
-cite$ -- 12
-duplicate$ -- 148
-empty$ -- 314
-format.name$ -- 276
-if$ -- 2416
+            729 strings with 6273 characters,
+and the built_in function-call counts, 10771 in all, are:
+= -- 1656
+> -- 622
+< -- 171
++ -- 201
+- -- 113
+* -- 694
+:= -- 2390
+add.period$ -- 13
+call.type$ -- 12
+change.case$ -- 84
+chr.to.int$ -- 12
+cite$ -- 13
+duplicate$ -- 159
+empty$ -- 345
+format.name$ -- 305
+if$ -- 2663
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 12
-newline$ -- 40
-num.names$ -- 134
-pop$ -- 168
+missing$ -- 13
+newline$ -- 43
+num.names$ -- 146
+pop$ -- 183
 preamble$ -- 1
-purify$ -- 88
+purify$ -- 96
 quote$ -- 0
 skip$ -- 0
 stack$ -- 0
-substring$ -- 342
-swap$ -- 61
+substring$ -- 384
+swap$ -- 65
 text.length$ -- 3
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 40
+type$ -- 44
 warning$ -- 1
-while$ -- 128
+while$ -- 140
 width$ -- 0
-write$ -- 181
+write$ -- 198
 (There was 1 warning)

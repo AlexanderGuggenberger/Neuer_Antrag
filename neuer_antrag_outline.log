@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.5.25)  16 AUG 2022 16:52
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.5.25)  18 AUG 2022 15:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -975,18 +975,18 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 
 {C:/Users/alexa/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] [2] [3] [4] 
 [5]
-(neuer_antrag_outline.bbl) [6] (neuer_antrag_outline.aux)
+[6] [7] [8] (neuer_antrag_outline.bbl [9]) [10] (neuer_antrag_outline.aux)
 Package rerunfilecheck Info: File `neuer_antrag_outline.out' has not changed.
-(rerunfilecheck)             Checksum: BF68626EACF53857C2E024183C78CD9E;989.
+(rerunfilecheck)             Checksum: 547F39F39A8994C58C0190D8F9024AFF;1231.
  ) 
 Here is how much of TeX's memory you used:
- 25720 strings out of 478614
- 469188 string characters out of 2843122
- 760951 words of memory out of 3000000
- 43364 multiletter control sequences out of 15000+600000
+ 25734 strings out of 478614
+ 469451 string characters out of 2843122
+ 763146 words of memory out of 3000000
+ 43372 multiletter control sequences out of 15000+600000
  477873 words of font info for 65 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,6n,89p,3253b,421s stack positions out of 10000i,1000n,20000p,200000b,80000s
+ 84i,12n,89p,3253b,522s stack positions out of 10000i,1000n,20000p,200000b,80000s
  <C:\Users\alexa\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm
 1200.pk><C:/Users/alexa/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfon
 ts/cm/cmbx12.pfb><C:/Users/alexa/AppData/Local/Programs/MiKTeX/fonts/type1/publ
@@ -996,12 +996,13 @@ X/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/alexa/AppData/Local/Progra
 ms/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/alexa/AppData/Loca
 l/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/alexa/AppD
 ata/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/ale
-xa/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/U
-sers/alexa/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.
-pfb>
-Output written on neuer_antrag_outline.pdf (6 pages, 149277 bytes).
+xa/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/
+Users/alexa/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.
+pfb><C:/Users/alexa/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/c
+m/cmti12.pfb>
+Output written on neuer_antrag_outline.pdf (10 pages, 173762 bytes).
 PDF statistics:
- 161 PDF objects out of 1000 (max. 8388607)
- 32 named destinations out of 1000 (max. 500000)
- 61 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 204 PDF objects out of 1000 (max. 8388607)
+ 38 named destinations out of 1000 (max. 500000)
+ 77 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,0 +1,20 @@
+---
+title: "Basic Descriptives For Research"
+author: "Alexander Guggenberger"
+date: "18 8 2022"
+output: html_document
+---
+
+```{r setup}
+
+library(tidyverse)
+
+setwd("~/GitHub/bayesianchair/otree/bayesianchair/data/")
+
+
+
+
+
+
+
+```
